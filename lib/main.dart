@@ -32,16 +32,7 @@ class _RandomWordState extends State<RandomWord> {
 
   void _saveWords() {
     saveWords.add(randomWord);
-    // print(saveWords);
-    Navigator.of(context)
-        .push(MaterialPageRoute(builder: (BuildContext context) {
-      return Scaffold(
-        appBar: AppBar(
-          title: Text('Saved Word'),
-        ),
-        body: Text(saveWords.join(" - ")),
-      );
-    }));
+    Navigator.push(context, MaterialPageRoute(builder: (context) => saveWordScreen(savedWords: saveWords))));
   }
 
   @override
@@ -56,5 +47,23 @@ class _RandomWordState extends State<RandomWord> {
         ])),
         floatingActionButton: FloatingActionButton(
             onPressed: _changeWord, child: Icon(Icons.play_arrow)));
+  }
+}
+
+class saveWordScreen extends StatelessWidget {
+  var savedWords = [];
+
+  saveWordScreen({this.savedWords });
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Saved Word'),
+      ),
+      body: Center(
+        child: Text(savedWords.join(" - "), style: TextStyle(fontSize: 40)))
+      ),
+    )
   }
 }
