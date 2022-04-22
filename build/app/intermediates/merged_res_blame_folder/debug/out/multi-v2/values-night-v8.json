@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "/home/melati/flutter/flutter_hello/build/app/intermediates/incremental/mergeDebugResources/merged.dir/values-night-v8/values-night-v8.xml",
+            "outputFile": "/home/melati/flutter/sekolahkoding-flutter/build/app/intermediates/incremental/mergeDebugResources/merged.dir/values-night-v8/values-night-v8.xml",
             "map": [
                 {
-                    "source": "/home/melati/flutter/flutter_hello/android/app/src/main/res/values-night/styles.xml",
+                    "source": "/home/melati/flutter/sekolahkoding-flutter/android/app/src/main/res/values-night/styles.xml",
                     "from": {
                         "startLines": "3,14",
                         "startColumns": "4,4",

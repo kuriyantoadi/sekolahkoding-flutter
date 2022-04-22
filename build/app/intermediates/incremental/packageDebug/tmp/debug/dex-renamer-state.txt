@@ -1,4 +1,4 @@
-#Thu Apr 21 00:51:34 WIB 2022
-base.0=/home/melati/flutter/flutter_hello/build/app/intermediates/dex/debug/mergeDexDebug/classes.dex
+#Fri Apr 22 13:47:55 WIB 2022
+base.0=/home/melati/flutter/sekolahkoding-flutter/build/app/intermediates/dex/debug/mergeDexDebug/classes.dex
 renamed.0=classes.dex
 path.0=classes.dex

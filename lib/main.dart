@@ -21,6 +21,7 @@ class RandomWord extends StatefulWidget {
 }
 
 class _RandomWordState extends State<RandomWord> {
+  var saveWords = [];
   String randomWord = WordPair.random().asString;
 
   void _changeWord() {
@@ -29,13 +30,31 @@ class _RandomWordState extends State<RandomWord> {
     });
   }
 
+  void _saveWords() {
+    saveWords.add(randomWord);
+    // print(saveWords);
+    Navigator.of(context)
+        .push(MaterialPageRoute(builder: (BuildContext context) {
+      return Scaffold(
+        appBar: AppBar(
+          title: Text('Saved Word'),
+        ),
+        body: Text(saveWords.join(" - ")),
+      );
+    }));
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text('Aplikasi Flutter ke 2')),
-      body: Center(child: Text(randomWord, style: TextStyle(fontSize: 40))),
-      floatingActionButton: FloatingActionButton(
-          onPressed: _changeWord, child: Icon(Icons.play_arrow)),
-    );
+        appBar: AppBar(title: Text('Aplikasi Flutter ke 2')),
+        body: Center(
+            child:
+                Column(mainAxisAlignment: MainAxisAlignment.center, children: [
+          Text(randomWord, style: TextStyle(fontSize: 40)),
+          IconButton(icon: Icon(Icons.favorite_border), onPressed: _saveWords)
+        ])),
+        floatingActionButton: FloatingActionButton(
+            onPressed: _changeWord, child: Icon(Icons.play_arrow)));
   }
 }
